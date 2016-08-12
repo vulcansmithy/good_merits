@@ -45,9 +45,6 @@ group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
   gem "byebug"
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem "web-console", "~> 2.0"
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   
@@ -55,6 +52,11 @@ group :development, :test do
   gem "rspec-rails",         "3.5.1"    # https://github.com/rspec/rspec-rails
   gem "guard-rspec",         "4.5.0"    # https://github.com/guard/guard-rspec
   gem "faker",               "1.4.3"    # https://github.com/stympy/faker
+end
+
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem "web-console", "~> 2.0"
 end
 
 group :test do

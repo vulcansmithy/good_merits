@@ -64,4 +64,5 @@ end
 
 gem "active_record-acts_as", "1.0.5"    # https://github.com/hzamani/active_record-acts_as
 gem "merit",                 "2.4.0"    # https://github.com/merit-gem/merit
+gem "versionist",            "1.5.0"    # https://github.com/bploetz/versionist
 

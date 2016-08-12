@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  api_version(:module => "V1", :header => {:name => "Accept", :value => "application/vnd.sandbox.com; version=1"}, :parameter => {:name => "version", :value => "1"}) do
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

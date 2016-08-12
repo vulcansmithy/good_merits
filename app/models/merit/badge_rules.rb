@@ -46,7 +46,9 @@ module Merit
       # end
       
       # Basic, you voted, you get a badge
-      grant_on "api/v1/users#create", badge: "pioneer"
+      grant_on "api/v1/users#create", badge: "pioneer", to: @user do |user|
+        User.count <= 5
+      end
     end
   end
 end

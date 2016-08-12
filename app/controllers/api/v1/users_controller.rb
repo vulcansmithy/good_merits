@@ -5,6 +5,14 @@ class Api::V1::UsersController < Api::V1::BaseController
   # POST  /api/users?version=1
   # POST  /api/v1/users
   def create
+    
+    @user = User.new(user_params)
+puts "@DEBUG #{__LINE__}    @user=#{ap @user}"    
+    if @user.save
+      success_response(@user, :created)
+    else  
+      error_response("Ecounter an issue saving the new User.", :bad_request)   
+    end   
   end
   
   # GET   /api/users/:id
@@ -21,9 +29,14 @@ class Api::V1::UsersController < Api::V1::BaseController
   def update
   end
   
+  def current_user
+puts "@DEBUG #{__LINE__}    @user=#{ap @user}"    
+    @user
+  end  
+  
   private
-    def admin_params
-      params.require(:admin).permit(
+    def user_params
+      params.require(:user).permit(
         :first_name, 
         :last_name, 
         :email 

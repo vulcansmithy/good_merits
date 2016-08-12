@@ -44,6 +44,9 @@ module Merit
       #
       #   user.name.length > 4
       # end
+      
+      # Basic, you voted, you get a badge
+      grant_on "api/v1/users#create", badge: "pioneer"
     end
   end
 end

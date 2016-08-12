@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   
   scope :path => "/api", as: "api" do
-    
     api_version(:module => "Api::V1", :header => {:name => "Accept", :value => "application/vnd.sandbox.com; version=1"}, :parameter => {:name => "version", :value => "1"}, :path => { :value => "v1" }, :default => true) do
+      resources :profiles
     end
-  
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

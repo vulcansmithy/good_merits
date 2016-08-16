@@ -22,14 +22,14 @@ describe Api::V1::UsersController do
       expect(response.code).to eq "201"
     end
     
-    puts "@DEBUG #{__LINE__}    #{ap User.all}"
-    
 
+    # make sure the first 5 created user have the awarded badge
     users = User.all
     for i in 0..4 
       expect(users[i].badges.empty?).to eq false
     end  
 
+    # maker sure the remaining 5 created user doesn't have the badge
     for i in 5..9 
       expect(users[i].badges.empty?).to eq true
     end  

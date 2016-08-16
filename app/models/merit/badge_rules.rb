@@ -46,7 +46,9 @@ module Merit
       # end
       
       # Basic, you voted, you get a badge
-      grant_on "api/v1/users#create", badge: "pioneer", to: @user do |user|
+      grant_on "api/v1/users#create", badge: "pioneer", model_name: "User" do |user|
+        puts "@DEBUG #{File.basename(__FILE__)}:#{__LINE__}    user=#{ap user}"
+        
         User.count <= 5
       end
     end

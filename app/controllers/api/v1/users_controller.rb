@@ -7,7 +7,6 @@ class Api::V1::UsersController < Api::V1::BaseController
   def create
     
     @user = User.new(user_params)
-puts "@DEBUG #{__LINE__}    @user=#{ap @user}"    
     if @user.save
       success_response(@user, :created)
     else  
@@ -30,9 +29,10 @@ puts "@DEBUG #{__LINE__}    @user=#{ap @user}"
   end
   
   def current_user
-puts "@DEBUG #{__LINE__}    @user=#{ap @user}"    
+    puts "@DEBUG #{File.basename(__FILE__)}:#{__LINE__}    Running inside current_user method..."
     @user
-  end  
+  end 
+
   
   private
     def user_params
